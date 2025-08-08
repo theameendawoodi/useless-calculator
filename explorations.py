@@ -1,0 +1,10 @@
+import pandas as pd
+dataset=pd.read_csv('/home/haroon/ameen/sarcasm project/arithmetic_dataset.csv')
+print(dataset.info())
+print(dataset['operator'].unique())
+print(dataset.isnull().any())
+print(dataset.duplicated().sum())
+dataset=dataset.dropna()
+print(dataset.duplicated().sum())
+print(dataset.info())   
+dataset.to_csv('final_dataset.csv')
